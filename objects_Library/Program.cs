@@ -30,6 +30,8 @@ namespace objects_Library
             {
                 Console.WriteLine("{0}  {1}", book.Author.Name, book.Title);
             }
+
+            books[2].GetSummary();
         }
     }
 }

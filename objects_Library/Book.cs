@@ -37,6 +37,11 @@ class Book : IComparable
         Book other = (Book)obj;
         return Title.CompareTo(other.Title);
     }
+
+    public void GetSummary()
+    {
+        Console.WriteLine("Title: {0}, Author: {1}, Author Age: {2}", title, author.Name, author.Age);
+    }
 }
 
 class Horror: Book
