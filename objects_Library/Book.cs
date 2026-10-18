@@ -14,7 +14,7 @@ class Book : IComparable
         Title = title;
     }
 
-    public Book(string title, Person author)
+    public Book(Person author, string title)
     {
         Title = title;
         Author = author;
@@ -36,5 +36,13 @@ class Book : IComparable
     {
         Book other = (Book)obj;
         return Title.CompareTo(other.Title);
+    }
+}
+
+class Horror: Book
+{
+    public Horror(string title) : base(title)
+    {
+        Author = new Person("Stephen King");
     }
 }
