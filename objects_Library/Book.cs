@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,5 +50,57 @@ class Horror: Book
     public Horror(string title) : base(title)
     {
         Author = new Person("Stephen King");
+    }
+}
+
+class BookStack
+{
+    private const int maxsize = 10;
+    private int top = 0;
+    private Book[] array = new Book[maxsize];
+
+    public void Push(Book book)
+    {
+        if (IsFull())
+        {
+            throw new InvalidOperationException("Stack is Full!");
+        }
+
+        array[top++] = book;
+    }
+
+    public Book Pop()
+    {
+        if (IsEmpty())
+        {
+            throw new InvalidOperationException("Stack is Empty!");
+        }
+
+        return array[--top];
+    }
+
+    public Book Peek()
+    {
+        if (IsEmpty())
+        {
+            throw new InvalidOperationException("Stack is Empty!");
+        }
+
+        return array[top - 1];
+    }
+
+    public bool IsEmpty()
+    {
+        return top == 0;
+    }
+
+    public bool IsFull()
+    {
+        return top == maxsize;
+    }
+
+    public int Count()
+    {
+        return top;
     }
 }
