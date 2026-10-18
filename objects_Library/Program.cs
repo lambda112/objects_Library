@@ -16,6 +16,7 @@ namespace objects_Library
 
             Console.WriteLine("My name is {0}, and I am {1} years old!", person1.Name, person1.Age);
             Console.WriteLine("My name is {0}, and I am {1} years old!", person2.Name, person2.Age);
+            Console.WriteLine(person1.CompareTo(person2)); // -1 means value is smaller, 0 means value is equal, 1 means value is bigger
         }
     }
 }
