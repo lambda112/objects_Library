@@ -10,6 +10,7 @@ namespace objects_Library
     {
         static void Main(string[] args)
         {
+            Person person1 = new Person("Leland");
         }
     }
 }
